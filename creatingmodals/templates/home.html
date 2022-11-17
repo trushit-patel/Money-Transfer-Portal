@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    table {
+        border: 1px solid black;
+        line-height: 30px;
+        text-align: center;
+        border-spacing: 0px;
+    }
+
+    td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Account Number</td>
+            <td>Balance</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for person in person_list %}
+        <tr>
+            <td>{{person.person_name}}</td>
+            <td>{{person.person_email}}</td>
+            <td>{{person.person_account_number}}</td>
+            <td>{{ person.person_balance}}</td>
+        </tr>
+        {% endfor%}
+    </tbody>
+
+</table>
+
+<a href="/load_transaction">Start Transaction</a>
+
+</br>
+
+{% endblock%}

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--content here-->
+<style>    
+    .form{
+
+        background-color: rgba(0, 0, 0, 0.507);
+        border-radius: 5px;
+        border: #ffffff 3px dashed;
+        padding: 30px;
+        margin-top: 10%;
+        margin-left: 40%;
+        width: 330px;
+    }
+    label{
+        font-family: 'Noto Sans JP', sans-serif;
+        font-weight: 400;
+        display: block;
+        color: #ffffff;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    input{
+        border: 1px solid #575757;
+        
+        width: 300px;
+        display: block;
+        margin-top: 10px;
+        height: 30px;
+        font-size: x-large;
+        font-family: 'Ubuntu', sans-serif;
+        
+    }
+    #submit {
+            margin-left: 10px;
+            margin-top: 20px;
+            width: 150px;
+            height: 50px;
+            font-family: 'Ubuntu', sans-serif;
+            font-size:30px;
+            font-weight: 600;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            border-radius: 0.5rem;
+            border-style: none;
+            display: inline;
+            
+    }
+    #reset
+    {
+        margin-left: 10px;
+        margin-top: 20px;
+        width: 150px;
+        height: 50px;
+        font-family: 'Ubuntu', sans-serif;
+        font-size:30px;
+        font-weight: 600;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        border-radius: 0.5rem;
+        border-style: none;
+        display: inline;
+    }
+    #reset:hover{
+        background-color: black;
+        color: white;
+    }
+    #submit:hover{
+        background-color: black;
+        color: white;
+    }
+</style>
+<div class="form">
+
+<form method="POST" action="/insert_transaction/">
+    {% csrf_token %}
+    <label>Sender Account Number:<input type="text" name="senderAccountNumber"></label>
+    <label>Receiver Account Number:<input type="text" name="receiverAccountNumber"></label>
+    <label>Amount to be transacted:<input type="number" name="amount"></label>
+    <input id="submit" type="submit" name="submit" />
+    <input id="reset" type="submit" name="reset"value="reset"/>
+</form>
+
+</div>
+<!--content here-->
+
+{% endblock%}

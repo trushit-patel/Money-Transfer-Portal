@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic banking system</title>
+	<link href="{% static 'base.css'%}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="root">
+        <div class="everything">
+            
+            <div class="navdiv">
+                <ul class="nav">
+                    <li class="logo">CAPITOL BANK</li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/load_accounts">Account Holders</a></li>
+                    <li><a href="/load_history">Transaction History</a></li>
+                    <li><a href="/load_transaction">Start Transactions</a></li>
+                  </ul>
+            </div>
+<!--conctent here-->
+           
+{% block content %}
+
+{% endblock %}
+
+
+<!--conctent here-->
+            
+        </div>
+        <div class="footerdiv">
+                <footer class="footer">
+                    © 2020 Copyright <a href="/" class="footlink">capitolbank.com</a>. All rights reserved.
+                </footer>
+            </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--content here-->
+
+<style>
+    table {
+        border: 1px solid black;
+        line-height: 40px;
+        text-align: center;
+        border-spacing: 0px;
+        margin-top: 40px;
+        width: 95%;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    tr:nth-child(2n)
+    {
+        background-color: rgba(0, 0, 0, 0.705);
+        color: white;
+    }
+    tr:nth-child(2n+1)
+    {
+        background-color: rgba(255, 255, 255, 0.712);
+        color: black;
+    }
+    td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    thead
+    {
+        font-weight:800;
+        font-size: xx-large;
+    }
+    tbody
+    {
+        font-size: x-large;
+        font-weight: 400;
+    }
+</style>
+
+<table align="center">
+    <thead>
+        <tr><td colspan="5">Transaction History</td></tr>
+        <tr>
+            <td>Sender Account Number</td>
+            <td>Reciever Account Number</td>
+            <td>Sender Name</td>
+            <td>Reciever Name</td>
+            <td>Amount</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for person in transaction %}
+        <tr>
+            <td>{{ person.sender_id.person_account_number }}</td>
+            <td>{{ person.receiver_id.person_account_number }}</td>
+            <td>{{ person.sender_id.person_name }}</td>
+            <td>{{ person.receiver_id.person_name }}</td>
+            <td>{{ person.receiver_amount }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+<!--content here-->
+{% endblock%}
